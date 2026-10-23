@@ -1,0 +1,226 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/balls/protos/Ball.proto"
+EXTERNPROTO "../protos/RobocupSoccerField.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/softbank/nao/protos/Nao.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/geometries/protos/TexturedBox.proto"
+
+WorldInfo {
+  info [
+    "ROBOTIS OP2 robot."
+    "The ROBOTIS OP2 robot simulation model can be programmed using the ROBOTIS OP2 motions files and the ROBOTIS OP2 walk control library."
+  ]
+  title "ROBOTIS OP2"
+  basicTimeStep 16
+}
+Viewpoint {
+  orientation -0.11556256097600133 0.45834690660256144 0.881228351625463 0.5573570566451583
+  position -7.177454313901215 -3.795237224006239 2.7627934467292024
+}
+TexturedBackground {
+  texture "noon_cloudy_countryside"
+  luminosity 1.5
+}
+TexturedBackgroundLight {
+  texture "noon_cloudy_countryside"
+  luminosity 0.5
+}
+DEF BALL Ball {
+  translation 0 1.22461e-18 0.05
+  rotation 1 0 0 1.5707963267948966
+  color 1 0 0
+  radius 0.0525
+}
+RobocupSoccerField {
+  turfPhysics FALSE
+}
+Nao {
+  translation -1 3.16 0.334
+  rotation 0 0 1 -1.5707953071795862
+  version "V5 (blue)"
+  controller "nao_soccer_player"
+}
+Solid {
+  children [
+    Solid {
+      translation 8 0 0.5
+      rotation 0 0 1 3.141592653589793
+      children [
+        Shape {
+          appearance PBRAppearance {
+            metalness 0
+          }
+          geometry Box {
+            size 0.05 11 1
+          }
+        }
+        Solid {
+          translation 0 0 0.04
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "E:/Mywebots/SU_Challenges/photo/University, AI Robotics, and RoboVision Logos.png"
+                  ]
+                }
+                textureTransform TextureTransform {
+                  scale 4 1
+                }
+              }
+              geometry TexturedBox {
+                size 0.1 11 1
+              }
+            }
+          ]
+          name "Wall_1_Banner"
+        }
+        Solid {
+          translation 0 2.75 1
+          children [
+            Shape {
+              appearance PBRAppearance {
+                metalness 0
+              }
+              geometry Box {
+                size 0.05 5.5 1
+              }
+            }
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "E:/Mywebots/SU_Challenges/photo/Robotics_Competition_Banner_4096x1024.png"
+                  ]
+                }
+              }
+              geometry TexturedBox {
+                size 0.1 5.5 1
+              }
+            }
+          ]
+          name "wall_1_Banner_2"
+        }
+        Solid {
+          translation 0 -2.75 1
+          children [
+            Shape {
+              appearance PBRAppearance {
+                metalness 0
+              }
+              geometry Box {
+                size 0.05 5.5 1
+              }
+            }
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "E:/Mywebots/SU_Challenges/photo/Robotics_Competition_Banner_4096x1024.png"
+                  ]
+                }
+              }
+              geometry TexturedBox {
+                size 0.1 5.5 1
+              }
+            }
+          ]
+          name "wall_1_Banner_3"
+        }
+      ]
+      name "Wall_1"
+    }
+    Solid {
+      translation -8 0 0.25
+      children [
+        Shape {
+          appearance PBRAppearance {
+            metalness 0
+          }
+          geometry Box {
+            size 0.05 11 0.5
+          }
+        }
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "E:/Mywebots/SU_Challenges/photo/University, AI Robotics, and RoboVision Logos.png"
+              ]
+            }
+            textureTransform TextureTransform {
+              scale 4 1
+            }
+          }
+          geometry TexturedBox {
+            size 0.1 11 0.55
+          }
+        }
+      ]
+      name "Wall_2"
+    }
+    Solid {
+      translation 0 5.5 0.25
+      rotation 0 0 1 -1.5707996938995747
+      children [
+        Shape {
+          appearance PBRAppearance {
+            metalness 0
+          }
+          geometry Box {
+            size 0.05 16 0.5
+          }
+        }
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "E:/Mywebots/SU_Challenges/photo/University, AI Robotics, and RoboVision Logos.png"
+              ]
+            }
+            textureTransform TextureTransform {
+              scale 8 1
+            }
+          }
+          geometry TexturedBox {
+            size 0.1 16 0.55
+          }
+        }
+      ]
+      name "Wall_3"
+    }
+    Solid {
+      translation 0 -5.5 0.25
+      rotation 0 0 1 1.570795613280012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            metalness 0
+          }
+          geometry Box {
+            size 0.05 16 0.5
+          }
+        }
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "E:/Mywebots/SU_Challenges/photo/University, AI Robotics, and RoboVision Logos.png"
+              ]
+            }
+            textureTransform TextureTransform {
+              scale 8 1
+            }
+          }
+          geometry TexturedBox {
+            size 0.1 16 0.55
+          }
+        }
+      ]
+      name "Wall_4"
+    }
+  ]
+  name "Wall"
+}

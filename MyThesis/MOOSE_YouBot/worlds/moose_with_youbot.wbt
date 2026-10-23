@@ -1,0 +1,65 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/clearpath/moose/protos/Moose.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/kuka/youbot/protos/Youbot.proto"
+
+WorldInfo {
+  contactProperties [
+    ContactProperties {
+      material1 "InteriorWheelMat"
+      coulombFriction [ 0, 2, 0 ]
+      frictionRotation -0.785398 0
+      bounce 0
+      forceDependentSlip [ 10, 0 ]
+    }
+    ContactProperties {
+      material1 "ExteriorWheelMat"
+      coulombFriction [ 0, 2, 0 ]
+      frictionRotation 0.785398 0
+      bounce 0
+      forceDependentSlip [ 10, 0 ]
+    }
+  ]
+}
+
+Viewpoint {
+  orientation -0.2 0.9 0.4 1.0
+  position 8 6 8
+  description "نمای کلی"
+}
+
+TexturedBackground {
+  texture "empty_office"
+}
+
+Floor {
+  size 30 30
+  appearance PBRAppearance {
+    baseColor 0.4 0.4 0.4
+    roughness 1
+    metalness 0
+  }
+}
+
+DirectionalLight {
+  direction -0.5 -1 -0.5
+  intensity 1.5
+  castShadows TRUE
+}
+
+Moose {
+  translation 0 0 0
+  rotation 0 1 0 1.5708
+  name "moose_with_arm"
+  controller "<none>"
+  color 0.9 0.6 0.1
+  bodySlot [
+    Youbot {
+      translation 0 0 0.15
+      name "youbot_arm"
+      controller "<none>"
+      numberOfArms 1
+      synchronization TRUE
+    }
+  ]
+}

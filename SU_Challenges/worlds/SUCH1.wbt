@@ -1,0 +1,259 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/apartment_structure/protos/Wall.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/geometries/protos/TexturedBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/kuka/youbot/protos/Youbot.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/WoodenBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/kuka/youbot/protos/KukaBox.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.23593602616723253 0.5483842936203696 -0.8022523655726441 0.9844980347456811
+  position -15.363296996014466 15.652029047337388 13.287221759914887
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Solid {
+  children [
+    Solid {
+      children [
+        WoodenBox {
+          translation 8 -7 0.3
+          name "Start_Box"
+        }
+      ]
+      name "Start_Box"
+      boundingObject Box {
+        size 0.6 0.6 0.6
+      }
+    }
+    Solid {
+      children [
+        WoodenBox {
+          translation -3 8 0.3
+          name "End_Box"
+        }
+      ]
+      name "End_Box"
+      boundingObject Box {
+        size 0.6 0.6 0.6
+      }
+    }
+    Solid {
+      translation -9.9 0 1
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "../photo/University, AI Robotics, and RoboVision Logos.png"
+              ]
+            }
+          }
+          geometry TexturedBox {
+            size 0.01 10 2
+          }
+        }
+      ]
+      name "Banner_1"
+    }
+    Solid {
+      translation 9.9 0 1
+      rotation 0 0 1 3.141592653589793
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "../photo/University, AI Robotics, and RoboVision Logos.png"
+              ]
+            }
+          }
+          geometry TexturedBox {
+            size 0.01 10 2
+          }
+        }
+      ]
+      name "Banner_2"
+    }
+    Solid {
+      translation 0 9.95 1
+      rotation 0 0 1 1.5707903061004251
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "../photo/Waving Iranian Flag Close-Up.png"
+              ]
+            }
+          }
+          geometry TexturedBox {
+            size 0.01 10 2
+          }
+        }
+      ]
+      name "Banner_3"
+    }
+    Solid {
+      translation 0 -9.95 1
+      rotation 0 0 1 1.5707903061004251
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "../photo/Persian Robotics Competition Banner.png"
+              ]
+            }
+          }
+          geometry TexturedBox {
+            size 0.01 10 2
+          }
+        }
+      ]
+      name "Banner_4"
+    }
+    Floor {
+      size 20 20
+      appearance Parquetry {
+      }
+    }
+    Solid {
+      children [
+        Wall {
+          translation -9.95 0 0
+          name "wall_1"
+          size 0.1 20 2
+        }
+      ]
+      name "wall_1"
+    }
+    Solid {
+      children [
+        Wall {
+          translation 0 -10 0
+          rotation 0 0 1 1.5707996938995747
+          name "wall_2"
+          size 0.1 20 2
+        }
+      ]
+      name "wall_2"
+    }
+    Solid {
+      children [
+        Wall {
+          translation 9.95 0 0
+          name "wall_3"
+          size 0.1 20 2
+        }
+      ]
+      name "wall_3"
+    }
+    Solid {
+      children [
+        Wall {
+          translation 0 10 0
+          rotation 0 0 1 1.5707996938995747
+          name "wall_4"
+          size 0.1 20 2
+        }
+      ]
+      name "wall_4"
+    }
+    Solid {
+      children [
+        KukaBox {
+          translation 7.2 -6 0.6125
+          color 1 0.333333 0
+        }
+      ]
+      name "Object"
+    }
+    Solid {
+      children [
+        Solid {
+          translation 3.16 1.064e-05 0
+          rotation 0 0 1 1.5707996938995747
+          children [
+            Wall {
+              translation 6.5 0.39 0
+              size 0.01 8.47 1
+            }
+          ]
+          name "wall_S3"
+        }
+        Solid {
+          translation -1.93646 -4.4052 0
+          rotation 0 0 1 0.6544996938995746
+          children [
+            Wall {
+              translation 7 1.4 0
+              size 0.01 13.95 1
+            }
+          ]
+          name "wall_S2"
+        }
+        Solid {
+          children [
+            Wall {
+              translation 7 0.97 0
+              size 0.01 11.05 1
+            }
+          ]
+          name "wall_S1"
+        }
+      ]
+      name "triangle_wall_1"
+    }
+    Solid {
+      translation 4.78 1.92 0
+      rotation 0 0 1 3.14159
+      children [
+        Solid {
+          translation 3.16 1.064e-05 0
+          rotation 0 0 1 1.5707996938995747
+          children [
+            Wall {
+              translation 6.5 0.39 0
+              size 0.01 8.47 1
+            }
+          ]
+          name "wall_S3"
+        }
+        Solid {
+          translation -1.93646 -4.4052 0
+          rotation 0 0 1 0.6544996938995746
+          children [
+            Wall {
+              translation 7 1.4 0
+              size 0.01 13.95 1
+            }
+          ]
+          name "wall_S2"
+        }
+        Solid {
+          children [
+            Wall {
+              translation 7 0.97 0
+              size 0.01 11.05 1
+            }
+          ]
+          name "wall_S1"
+        }
+      ]
+      name "triangle_wall_2"
+    }
+  ]
+  name "Ch_1_Room"
+}
+Youbot {
+  translation 0 -9 0.12
+}

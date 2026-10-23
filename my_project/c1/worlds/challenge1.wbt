@@ -1,0 +1,354 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "../protos/Crazyflie.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Parquetry.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.41011723525911 0.26113537473592 0.8738490541306058 2.126098767816825
+  position 9.365192875909914 4.733978562864172 7.499393020558308
+  follow "floor"
+  followType "None"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  size 100 100
+  appearance Parquetry {
+    type "light strip"
+  }
+}
+Crazyflie {
+  translation 10 10 0.015
+  rotation 0 0 1 3.14159
+  controller "crazyflie_py_wallfollowing"
+}
+Solid {
+  translation 8 8.5 0
+  children [
+    DEF Column_1 Solid {
+      children [
+        DEF column_1 Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 0 0.498039
+            }
+          }
+          geometry Cylinder {
+            height 5
+            radius 0.15
+          }
+        }
+      ]
+      name "solid(2)"
+      boundingObject USE column_1
+    }
+    DEF Column_2 Solid {
+      translation 0 1 0
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 0 0.498039
+            }
+          }
+          geometry Cylinder {
+            height 5
+            radius 0.15
+          }
+        }
+      ]
+      name "solid(1)"
+      boundingObject USE column_1
+    }
+    DEF Column_3 Solid {
+      translation 0 2 0
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 0 0.498039
+            }
+          }
+          geometry Cylinder {
+            height 5
+            radius 0.15
+          }
+        }
+      ]
+      boundingObject USE column_1
+    }
+    DEF Column_4 Solid {
+      translation 0 3 0
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 0 0.498039
+            }
+          }
+          geometry Cylinder {
+            height 5
+            radius 0.15
+          }
+        }
+      ]
+      name "solid(3)"
+      boundingObject USE column_1
+    }
+    DEF Column_5 Solid {
+      translation -1 2.5 0
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 0 0.498039
+            }
+          }
+          geometry Cylinder {
+            height 5
+            radius 0.15
+          }
+        }
+      ]
+      name "solid(4)"
+      boundingObject USE column_1
+    }
+    DEF Column_6 Solid {
+      translation -1 1.5 0
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 0 0.498039
+            }
+          }
+          geometry Cylinder {
+            height 5
+            radius 0.15
+          }
+        }
+      ]
+      name "solid(5)"
+      boundingObject USE column_1
+    }
+    DEF Column_7 Solid {
+      translation -1 0.5 0
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 0 0.498039
+            }
+          }
+          geometry Cylinder {
+            height 5
+            radius 0.15
+          }
+        }
+      ]
+      name "solid(6)"
+      boundingObject USE column_1
+    }
+    DEF Column_8 Solid {
+      translation -2 0 0
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 0 0.498039
+            }
+          }
+          geometry Cylinder {
+            height 5
+            radius 0.15
+          }
+        }
+      ]
+      name "solid(7)"
+      boundingObject USE column_1
+    }
+    DEF Column_9 Solid {
+      translation -2 1 0
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 0 0.498039
+            }
+          }
+          geometry Cylinder {
+            height 5
+            radius 0.15
+          }
+        }
+      ]
+      name "solid(8)"
+      boundingObject USE column_1
+    }
+    DEF Column_10 Solid {
+      translation -2 2 0
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 0 0.498039
+            }
+          }
+          geometry Cylinder {
+            height 5
+            radius 0.15
+          }
+        }
+      ]
+      name "solid(9)"
+      boundingObject USE column_1
+    }
+    DEF Column_11 Solid {
+      translation -2 3 0
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 0 0.498039
+            }
+          }
+          geometry Cylinder {
+            height 5
+            radius 0.15
+          }
+        }
+      ]
+      name "solid(10)"
+      boundingObject USE column_1
+    }
+    DEF Column_12 Solid {
+      translation -3 2.5 0
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 0 0.498039
+            }
+          }
+          geometry Cylinder {
+            height 5
+            radius 0.15
+          }
+        }
+      ]
+      name "solid(11)"
+      boundingObject USE column_1
+    }
+    DEF Column_13 Solid {
+      translation -3 1.5 0
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 0 0.498039
+            }
+          }
+          geometry Cylinder {
+            height 5
+            radius 0.15
+          }
+        }
+      ]
+      name "solid(12)"
+      boundingObject USE column_1
+    }
+    DEF Column_14 Solid {
+      translation -3 0.5 0
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 0 0.498039
+            }
+          }
+          geometry Cylinder {
+            height 5
+            radius 0.15
+          }
+        }
+      ]
+      name "solid(13)"
+      boundingObject USE column_1
+    }
+    DEF Column_15 Solid {
+      translation -5 1.5 0.75
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 0 0.498039
+            }
+          }
+          geometry DEF box_1 Box {
+            size 1 1 1.5
+          }
+        }
+      ]
+      name "solid(14)"
+      boundingObject USE box_1
+    }
+    DEF Column_16 Solid {
+      translation -3.35 3.84 0.75
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 0 0.498039
+            }
+          }
+          geometry DEF box_2 Box {
+            size 15 0.1 1.5
+          }
+        }
+      ]
+      name "solid(15)"
+      boundingObject USE box_2
+    }
+    DEF Column_17 Solid {
+      translation -3.35 -0.75 0.75
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 0 0.498039
+            }
+          }
+          geometry DEF box_1 Box {
+            size 15 0.1 1.5
+          }
+        }
+      ]
+      name "solid(16)"
+      boundingObject USE box_2
+    }
+    DEF Column_18 Solid {
+      translation -10.94 1.6 0.75
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0 0 0.498039
+            }
+          }
+          geometry DEF box_3 Box {
+            size 0.1 4.75 1.5
+          }
+        }
+      ]
+      name "solid(17)"
+      boundingObject USE box_3
+    }
+  ]
+}

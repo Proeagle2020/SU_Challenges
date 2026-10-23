@@ -1,0 +1,81 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "../protos/Crazyflie.proto"
+
+WorldInfo {
+  title "Crazyflie VIO Test"
+  basicTimeStep 16
+}
+Viewpoint {
+  orientation 0.09247377104569572 -0.379989610806484 -0.9203567228785398 5.767875599847752
+  position -3.8722081067000067 -1.6542675945085588 0.8346355503206622
+  follow "Crazyflie"
+  followSmoothness 0.15
+}
+Background {
+  skyColor [
+    0.45 0.65 0.85
+  ]
+}
+DirectionalLight {
+  direction -0.3 -0.5 -1
+}
+Solid {
+  translation 0 0 -0.05
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.55 0.55 0.55
+        roughness 1
+      }
+      geometry Box {
+        size 8 6 0.1
+      }
+    }
+  ]
+  name "vio_floor"
+  boundingObject Box {
+    size 8 6 0.1
+  }
+}
+Solid {
+  translation 2 0 0.4
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 0.2 0.1
+        roughness 1
+      }
+      geometry Box {
+        size 0.35 0.35 0.8
+      }
+    }
+  ]
+  name "obstacle_red"
+  boundingObject Box {
+    size 0.35 0.35 0.8
+  }
+}
+Solid {
+  translation -1.5 1.2 0.3
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.1 0.35 0.8
+        roughness 1
+      }
+      geometry Box {
+        size 0.6 0.3 0.6
+      }
+    }
+  ]
+  name "obstacle_blue"
+  boundingObject Box {
+    size 0.6 0.3 0.6
+  }
+}
+Crazyflie {
+  translation 8.660987285712495e-17 -3.4031027767274774e-18 0.014995094567405462
+  rotation -0.5978772034678782 0.7423845581657332 -0.30233758841814273 1.2818420385039124e-15
+  controller "vio_logger"
+}

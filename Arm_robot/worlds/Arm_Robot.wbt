@@ -1,0 +1,120 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Parquetry.proto"
+
+WorldInfo {
+  title "Arm_Robot"
+}
+Viewpoint {
+  fieldOfView 0.8
+  orientation -0.13224592082117312 0.8305906330804428 0.5409530632736903 0.5725165568117908
+  position -2.697076869947712 -1.138846576830535 1.6003822754098316
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorAppearance Parquetry {
+    type "dark strip"
+  }
+}
+Robot {
+  translation 0 0 0.1
+  children [
+    DEF base Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0 1
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 0.2
+      }
+    }
+    DEF Joint_1 HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 0 1
+        anchor 0 0 0.15
+      }
+      device [
+        RotationalMotor {
+          name "motor_1"
+          acceleration 1
+        }
+      ]
+      endPoint Solid {
+        translation 0 0 0.15
+        children [
+          DEF Joint_01 Shape {
+            appearance DEF Joint_color Appearance {
+              material Material {
+                diffuseColor 0.666667 1 0
+              }
+            }
+            geometry DEF Joint_geo Cylinder {
+              height 0.1
+              radius 0.05
+            }
+          }
+          Solid {
+            translation 0 -0.25 0
+            children [
+              DEF Link_01 Shape {
+                appearance DEF Link_color Appearance {
+                  material Material {
+                    diffuseColor 0.666667 0 0
+                  }
+                }
+                geometry Box {
+                  size 0.05 0.5 0.1
+                }
+              }
+              HingeJoint {
+                jointParameters HingeJointParameters {
+                }
+                device [
+                  RotationalMotor {
+                    name "motor_2"
+                    acceleration 0
+                  }
+                  PositionSensor {
+                    name "position_motor_2"
+                  }
+                ]
+                endPoint Solid {
+                  translation 0 -0.25 0
+                  rotation 1 0 0 0
+                  children [
+                    DEF Joint_02 Shape {
+                      appearance USE Joint_color
+                      geometry USE Joint_geo
+                    }
+                    Solid {
+                      translation 0 -0.25 0
+                      children [
+                        USE Link_01
+                      ]
+                      name "Link_02"
+                      boundingObject USE Link_01
+                    }
+                  ]
+                  boundingObject USE Joint_02
+                }
+              }
+            ]
+            boundingObject USE Link_01
+          }
+        ]
+        boundingObject USE Joint_geo
+        physics Physics {
+        }
+      }
+    }
+  ]
+  boundingObject USE base
+  controller "Arm_2link_controller"
+}

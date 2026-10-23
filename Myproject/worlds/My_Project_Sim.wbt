@@ -1,0 +1,93 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/advertising_board/protos/AdvertisingBoard.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/vehicles/protos/bmw/BmwX5.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/buildings/protos/BuildingUnderConstruction.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/apartment_structure/protos/Wall.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/trees/protos/Forest.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/trees/protos/BigSassafras.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/trees/protos/Pine.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/adept/pioneer3/protos/Pioneer3dx.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/dji/mavic/protos/Mavic2Pro.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/kuka/youbot/protos/Youbot.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.16801832573661954 0.38288760557001744 0.9083869900639935 0.9000489318876773
+  position -1.2520690174911122 -1.9793813495330372 1.1844093908300002
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  translation 18.4213 2.18032 0
+  rotation 0 0 1 0.11781
+  floorSize 100 100
+  floorAppearance Parquetry {
+  }
+}
+Solid {
+  translation 63.95 2.51 0
+  rotation 0 0 1 5.30716e-06
+  children [
+    AdvertisingBoard {
+      backTexture [
+        "C:/Users/Redmon/Pictures/My_Project_Sim.png"
+      ]
+    }
+  ]
+  name "Board"
+}
+Solid {
+  translation 9.4 16.34 0
+  children [
+    BmwX5 {
+    }
+  ]
+  name "BMW"
+}
+Solid {
+  children [
+    BuildingUnderConstruction {
+      translation 51.41 44.38 0
+    }
+  ]
+  name "Building _under_const"
+}
+Solid {
+  children [
+    Pine {
+      translation 4.47 6.65 0
+      name "pine tree(1)"
+    }
+    Pine {
+      translation 4.47 -5.11 0
+    }
+    BigSassafras {
+      translation 3.9 -14.68 -1.83024e-05
+      rotation 0 1 0 4.692820414042842e-06
+    }
+    Forest {
+      translation 50.03 -17.61 0
+    }
+    Wall {
+      translation 10.62 -6.65 0
+    }
+  ]
+}
+Pioneer3dx {
+  controller "braitenberg"
+}
+Mavic2Pro {
+  translation -0.05 0 0.345
+  controller "mavic2pro_patrol"
+}
+Youbot {
+  translation 0.99 -0.86 0.12
+}

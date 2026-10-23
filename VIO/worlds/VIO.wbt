@@ -1,0 +1,23 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/bitcraze/crazyflie/protos/Crazyflie.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/Floor.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.16334280173366958 -0.05981424315083499 0.9847544797755876 3.833776006850651
+  position 0.7723659655346309 0.6435196417905252 0.38191449929972626
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Crazyflie {
+  translation 0 0 0
+  controller "crazyflie_py_wallfollowing"
+}
+Floor {
+}

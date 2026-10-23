@@ -1,0 +1,124 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/bitcraze/crazyflie/protos/Crazyflie.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/tables/protos/Desk.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/balls/protos/Ball.proto"
+
+WorldInfo {
+  info [
+    "Bitcraze's Crazyflie drone."
+    "This simulation allows you to pilot the drone with your keyboard."
+  ]
+  title "Crazyflie"
+}
+Viewpoint {
+  orientation -0.15061338914362904 -0.33866628474062366 0.928773790861183 5.265862593129959
+  position -5.204184784523236 6.577499587566564 3.7408327095715697
+  follow "Crazyflie"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+}
+Crazyflie {
+  controller "crazyflie_py"
+  extensionSlot [
+    Camera {
+      translation 0 0 0.013
+      rotation -0.5773509358554485 0.5773489358556708 0.5773509358554485 2.0944
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 1 0 0.498039
+            }
+          }
+          geometry Cylinder {
+            height 0.0025
+            radius 0.0025
+          }
+        }
+      ]
+      name "camera_d1"
+      boundingObject Cylinder {
+        height 0.0025
+        radius 0.0025
+      }
+      physics Physics {
+      }
+      recognitionColors [
+        1 1 0
+      ]
+      width 128
+      height 128
+      lens Lens {
+      }
+      focus Focus {
+      }
+      zoom Zoom {
+      }
+      recognition Recognition {
+      }
+      lensFlare LensFlare {
+      }
+    }
+    Camera {
+      translation 0 0 0.013
+      rotation -7.256639999755594e-06 0.9999999999663196 3.834349999870858e-06 0.523596
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 1 0 0.498039
+            }
+          }
+          geometry Cylinder {
+            height 0.0025
+            radius 0.0025
+          }
+        }
+      ]
+      name "camera_d2"
+      boundingObject Cylinder {
+        height 0.0025
+        radius 0.0025
+      }
+      physics Physics {
+      }
+      recognitionColors [
+        1 1 0
+      ]
+      lens Lens {
+      }
+      focus Focus {
+      }
+      zoom Zoom {
+      }
+      recognition Recognition {
+      }
+    }
+    Solid {
+      children [
+        Display {
+        }
+      ]
+    }
+  ]
+}
+Desk {
+  translation 1.46 0 0
+}
+Ball {
+  translation 0.23 -0.94 0.1625
+  color 1 1 0
+}
+Ball {
+  translation 0.9 1.85 0.1625
+  name "ball(1)"
+  color 1 1 0
+}

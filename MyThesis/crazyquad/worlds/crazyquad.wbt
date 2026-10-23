@@ -1,0 +1,118 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/bitcraze/crazyflie/protos/Crazyflie.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.22877813853852536 0.42419820362737826 -0.876194297725198 1.1035003723327486
+  position -1.2667229608854673 6.25681117005355 3.990211084656686
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  size 50 50
+  tileSize 1 1
+  appearance Parquetry {
+    colorOverride 0.490196 0.666667 0.533333
+  }
+}
+Crazyflie {
+  translation 0 0 0.0149804
+  rotation 0.08110025134643695 0.0052971349448653815 -0.9966918729441515 9.59251236108131e-07
+  name "Crazyflie_N1"
+  controller "CCN1"
+}
+Crazyflie {
+  translation 0 1 0.0149804
+  rotation 0.010744126149939167 0.16920279976165162 0.9855226919285486 8.346194508157915e-07
+  name "Crazyflie_N2"
+  controller "CCN2"
+}
+Crazyflie {
+  translation 1 0 0.0149804
+  rotation 0.8702057936225815 0.1513342306247261 -0.46887080031381245 7.385024434583389e-08
+  name "Crazyflie_N3"
+  controller "CCN3"
+}
+Crazyflie {
+  translation 1 1 0.014980378970892282
+  rotation -0.9866982591362168 -0.0680740127618437 0.14762274284153998 6.553672048268337e-17
+  name "Crazyflie_N4"
+  controller "CCN4"
+}
+Solid {
+  translation 2 0.5 0
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0.666667 1
+      }
+      geometry Cylinder {
+        radius 0.1
+      }
+    }
+  ]
+  boundingObject Cylinder {
+    radius 0.1
+  }
+}
+Solid {
+  translation 3 0.5 0
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0.666667 1
+      }
+      geometry Cylinder {
+        radius 0.1
+      }
+    }
+  ]
+  name "solid(1)"
+  boundingObject Cylinder {
+    radius 0.1
+  }
+}
+Solid {
+  translation 5 0.2 0
+  rotation 0 0 1 1.5708003061004252
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0.666667 1
+      }
+      geometry Box {
+        size 0.05 1 2
+      }
+    }
+  ]
+  name "solid(2)"
+  boundingObject Box {
+    size 0.05 1 2
+  }
+}
+Solid {
+  translation 5 0.7 0
+  rotation 0 0 1 1.5708003061004252
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0.666667 1
+      }
+      geometry Box {
+        size 0.05 1 2
+      }
+    }
+  ]
+  name "solid(3)"
+  boundingObject Box {
+    size 0.05 1 2
+  }
+}

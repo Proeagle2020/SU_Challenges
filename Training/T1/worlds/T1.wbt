@@ -1,0 +1,145 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.5773512905569911 0.5773482264581385 0.577351290548327 2.094403064104273
+  position 0.10349739739366293 0.28849719262975615 3.963405501557329
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+}
+Robot {
+  translation 0 0 0.05
+  rotation 0 0 -1 -5.307179586466759e-06
+  children [
+    DEF base Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 0 0
+        }
+      }
+      geometry Box {
+        size 0.2 0.2 0.1
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 3.889455768151415e-06
+        axis 0 0 1
+        anchor 0 0 0.1
+      }
+      device [
+        RotationalMotor {
+          name "motor_1"
+        }
+        PositionSensor {
+          name "PS_1"
+        }
+      ]
+      endPoint Solid {
+        translation -1.531049797844467e-13 -5.197825495086128e-15 0.1
+        rotation 0 0 1 4.902731134006486e-06
+        children [
+          DEF Joint_1 Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0 1 0
+              }
+            }
+            geometry DEF Arm_joint Cylinder {
+              height 0.1
+              radius 0.05
+            }
+          }
+          DEF Arm_Link Solid {
+            translation 0.35 0 0
+            rotation 0 0 1 -1.5707953071795862
+            children [
+              DEF Arm_Link Shape {
+                appearance Appearance {
+                  material Material {
+                    diffuseColor 1 1 0
+                  }
+                }
+                geometry DEF Arm_robot Box {
+                  size 0.02 0.7 0.05
+                }
+              }
+              HingeJoint {
+                jointParameters HingeJointParameters {
+                  axis 0 0 1
+                  anchor 0 0.35 0
+                }
+                device [
+                  RotationalMotor {
+                    name "motor_2"
+                  }
+                  PositionSensor {
+                    name "PS_2"
+                  }
+                ]
+                endPoint Solid {
+                  translation 0 0.35 0
+                  children [
+                    DEF Joint_2 Shape {
+                      appearance Appearance {
+                        material Material {
+                          diffuseColor 0 0 1
+                        }
+                      }
+                      geometry USE Arm_joint
+                    }
+                    Solid {
+                      translation 0 0.35 0
+                      children [
+                        USE Arm_Link
+                      ]
+                      boundingObject USE Arm_Link
+                    }
+                    Solid {
+                      translation 0 0.7 0
+                      children [
+                        Shape {
+                          appearance Appearance {
+                            material Material {
+                              diffuseColor 0.666667 0 0
+                            }
+                          }
+                          geometry Sphere {
+                            radius 0.005
+                          }
+                        }
+                        GPS {
+                          name "End_gps"
+                        }
+                      ]
+                      name "End_Effector"
+                    }
+                  ]
+                  boundingObject USE Arm_joint
+                }
+              }
+            ]
+            boundingObject USE Arm_Link
+            physics Physics {
+            }
+          }
+        ]
+        boundingObject USE Joint_1
+        physics Physics {
+          density -1
+          mass 0.25
+        }
+      }
+    }
+  ]
+  controller "Arm_controller"
+}

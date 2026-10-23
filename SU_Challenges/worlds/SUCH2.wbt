@@ -1,0 +1,222 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/apartment_structure/protos/Wall.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/WoodenBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/bitcraze/crazyflie/protos/Crazyflie.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.17471754822992777 0.4792248890027447 -0.8601263186886154 0.8018138061151203
+  position -25.67835807277794 20.704719112923673 13.995782713671868
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  size 20 20
+  appearance Parquetry {
+    type "dark strip"
+  }
+}
+Solid {
+  children [
+    Solid {
+      children [
+        Wall {
+          translation 10 0 0
+          name "wall_1"
+          size 0.1 20 5
+        }
+      ]
+      name "Wall_1"
+    }
+    Solid {
+      children [
+        Wall {
+          translation 0 -10 0
+          rotation 0 0 1 1.5708003061004252
+          name "wall_2"
+          size 0.1 20 5
+        }
+      ]
+      name "Wall_2"
+    }
+    Solid {
+      translation 9.9 0.1 2.5
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "../photo/University, AI Robotics, and RoboVision Logos.png"
+              ]
+            }
+          }
+          geometry Box {
+            size 0.1 20 5
+          }
+        }
+      ]
+      name "wall_1_banner"
+    }
+    Solid {
+      translation 0 -9.9 2.5
+      rotation 0 0 1 -1.5707996938995747
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "../photo/Persian Robotics Competition Banner.png"
+              ]
+            }
+          }
+          geometry Box {
+            size 0.1 20 5
+          }
+        }
+      ]
+      name "wall_2_banner"
+    }
+    WoodenBox {
+      translation -8 8 0.3
+      name "Start_box"
+    }
+    WoodenBox {
+      translation 8 -8 0.3
+      name "Finish_Box"
+    }
+  ]
+}
+Solid {
+  children [
+    Solid {
+      translation -6 4 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            baseColorMap ImageTexture {
+            }
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.1
+            radius 0.25
+          }
+        }
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "../photo/centerofgravity_5121.png"
+              ]
+            }
+          }
+          geometry Cylinder {
+            height 0.11
+            radius 0.25
+          }
+        }
+      ]
+      name "Target_1"
+    }
+    Solid {
+      translation 8 8 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.333333 1 0
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.1
+            radius 0.25
+          }
+        }
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "../photo/centerofgravity_5121.png"
+              ]
+            }
+          }
+          geometry Cylinder {
+            height 0.11
+            radius 0.25
+          }
+        }
+      ]
+      name "Target_2"
+    }
+    Solid {
+      translation 2 -1 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.1
+            radius 0.25
+          }
+        }
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "../photo/centerofgravity_5121.png"
+              ]
+            }
+          }
+          geometry Cylinder {
+            height 0.11
+            radius 0.25
+          }
+        }
+      ]
+      name "Target_3"
+    }
+    Solid {
+      translation -8 -7 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.1
+            radius 0.25
+          }
+        }
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "../photo/centerofgravity_5121.png"
+              ]
+            }
+          }
+          geometry Cylinder {
+            height 0.11
+            radius 0.25
+          }
+        }
+      ]
+      name "Target_4"
+    }
+  ]
+  name "Solid_Pad"
+}
+Crazyflie {
+  translation -8 8 0.615
+}

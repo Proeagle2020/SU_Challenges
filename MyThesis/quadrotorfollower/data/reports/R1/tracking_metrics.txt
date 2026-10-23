@@ -1,0 +1,6 @@
+CRAZYFLIE LEADER-FOLLOWER METRICS
+===================================
+
+Position RMSE = 0.201031 m
+Maximum Position Error = 1.075724 m
+Final Position Error = 0.703774 m
